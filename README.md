@@ -1,4 +1,4 @@
 # SFUCompass
 
-https://uwflow.com/
-https://github.com/UWFlow
+- https://uwflow.com/
+- https://github.com/UWFlow
