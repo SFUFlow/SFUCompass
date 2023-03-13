@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "0d59a3ff-244a-4c57-be6d-d16f390e8a02",
+		"name": "SFUCompass-SFU Courses API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "single course section in year/yerm/department/courseNumber",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.globals.set(\"base_url\",\"http://www.sfu.ca/bin/wcm/course-outlines\")\r",
+							"pm.globals.set(\"year\",2023)\r",
+							"pm.globals.set(\"term\",\"spring\")\r",
+							"pm.globals.set(\"department\",\"cmpt\")\r",
+							"pm.globals.set(\"courseNumber\",276)\r",
+							"pm.globals.set(\"courseSection\",\"d100\")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}?{{year}}/{{term}}/{{department}}/{{courseNumber}}/{{courseSection}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"query": [
+						{
+							"key": "{{year}}/{{term}}/{{department}}/{{courseNumber}}/{{courseSection}}",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all sections of course in year/term/department",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.globals.set(\"base_url\",\"http://www.sfu.ca/bin/wcm/course-outlines\")\r",
+							"pm.globals.set(\"year\",2023)\r",
+							"pm.globals.set(\"term\",\"spring\")\r",
+							"pm.globals.set(\"department\",\"cmpt\")\r",
+							"pm.globals.set(\"courseNumber\",276)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}?{{year}}/{{term}}/{{department}}/{{courseNumber}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"query": [
+						{
+							"key": "{{year}}/{{term}}/{{department}}/{{courseNumber}}",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all courses in deptments in year/term",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.globals.set(\"base_url\",\"http://www.sfu.ca/bin/wcm/course-outlines\")\r",
+							"pm.globals.set(\"year\",2023)\r",
+							"pm.globals.set(\"term\",\"spring\")\r",
+							"pm.globals.set(\"department\",\"cmpt\")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}?{{year}}/{{term}}/{{department}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"query": [
+						{
+							"key": "{{year}}/{{term}}/{{department}}",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all course departments in year/term",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.globals.set(\"base_url\",\"http://www.sfu.ca/bin/wcm/course-outlines\")\r",
+							"pm.globals.set(\"year\",2023)\r",
+							"pm.globals.set(\"term\",\"spring\")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}?{{year}}/{{term}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"query": [
+						{
+							"key": "{{year}}/{{term}}",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all years (2014-present)",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.globals.set(\"base_url\",\"http://www.sfu.ca/bin/wcm/course-outlines\")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}",
+					"host": [
+						"{{base_url}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
