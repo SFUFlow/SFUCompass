@@ -23,6 +23,7 @@ The design of SFU Nocte aims to be modern and minimalistic, yet being playful an
 
 The logo is themed around the Racoon, SFU's unofficial yet culturally apropriate mascot. It is paired with the name SFU Nocte, meaning night, because most students have a shit sleep schedule and are nocturnal... Variations of this logo can be found in SVG format in the Assets folder. 
 
+**Message @Alx-Li for any asset requests or changes**
 
 ## Useful links 
 
