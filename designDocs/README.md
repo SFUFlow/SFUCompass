@@ -1,7 +1,7 @@
 # Design Documents
 ![Responsive Logo](./Source%20Files/LOGO-Responsiveness.png)
-![Palette](./Source%20Files/Palette.png)
-![Typography](./Source%20Files/Typography.png)
+![Basic Palette](./Source%20Files/Palette.png)
+![Basic Typography](./Source%20Files/Typography.png)
 
 
 > Figma Link: [Here](https://www.figma.com/file/a1oTbBgrBrj7EeyiGm8E1r/SFU-Nocte?node-id=0%3A1&t=gMjB3bRKNKKwBtYk-1)
