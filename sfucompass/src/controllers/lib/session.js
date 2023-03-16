@@ -1,5 +1,5 @@
 import { parse, serialize } from 'cookie'
-import { createLoginSession, getLoginSession } from './auth'
+import Iron from '@hapi/iron'
 
 function parseCookies(req) {
   // For API Routes we don't need to parse the cookies.
@@ -43,4 +43,25 @@ export default function session({ name, secret, cookie: cookieOpts }) {
 
     next()
   }
+}
+
+
+async function createLoginSession(session, secret) {
+  const createdAt = Date.now()
+  const obj = { ...session, createdAt }
+  const token = await Iron.seal(obj, secret, Iron.defaults)
+
+  return token
+}
+
+async function getLoginSession(token, secret) {
+  const session = await Iron.unseal(token, secret, Iron.defaults)
+  const expiresAt = session.createdAt + session.maxAge * 1000
+
+  // Validate the expiration date of the session
+  if (session.maxAge && Date.now() > expiresAt) {
+    throw new Error('Session expired')
+  }
+
+  return session
 }
