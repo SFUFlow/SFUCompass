@@ -14,6 +14,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.center}>
           <Image
+            draggable={false}
             className={styles.logo}
             src="/coom.svg"
             alt="Next.js Logo"

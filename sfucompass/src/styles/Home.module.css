@@ -41,5 +41,5 @@
 
 .logo {
   position: relative;
-  filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
+  filter: brightness(3) contrast(1.3) drop-shadow(0 0 0.5rem #dd1d1dd0);
 }
