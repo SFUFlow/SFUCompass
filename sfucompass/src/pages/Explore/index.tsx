@@ -1,3 +1,4 @@
-export default function Explore(){
-    return <div>Explore</div>
+export default function Explore() {
+  return <div>Explore</div>;
 }
+
