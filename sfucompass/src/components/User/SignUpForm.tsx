@@ -74,7 +74,6 @@ export default function SignUpForm() {
     }
 
     return (
-        <div>
             <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen w-full">
 
                 <div className="w-full ">
@@ -84,7 +83,9 @@ export default function SignUpForm() {
                         </h1>
                         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
                     </div>
+
                     <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit} noValidate>
+
                         <div>
                             <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900">Your Email</label>
                             <div className="relative">
@@ -99,10 +100,12 @@ export default function SignUpForm() {
                             <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900">Password</label>
                             <input type="password" name="password" id="password" placeholder="••••••••" className={error?.cause == "password" ? "bg-gray-50 border border-red-700 text-red-800 rounded-lg focus:ring-red-800 focus:border-red-800 block w-full p-2.5" : "bg-gray-50 border border-gray-500 text-gray-900 rounded-lg focus:ring-red-800 focus:border-red-800 block w-full p-2.5"} required />
                         </div>
+
                         <div>
                             <label htmlFor="confirmPassword" className="block mb-2 text-sm font-medium text-gray-900">Confirm password</label>
                             <input type="password" name="confirmPassword" id="confirmPassword" placeholder="••••••••" className={error?.cause == "password" ? "bg-gray-50 border border-red-700 text-red-800 rounded-lg focus:ring-red-800 focus:border-red-800 block w-full p-2.5" : "bg-gray-50 border border-gray-500 text-gray-900 rounded-lg focus:ring-red-800 focus:border-red-800 block w-full p-2.5"} required />
                         </div>
+
                         <div className="flex items-start">
                             <div className="flex items-center h-5">
                                 <input id="remember" aria-describedby="remember" type="checkbox" className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-red-800 checked:bg-red-800" />
@@ -111,10 +114,13 @@ export default function SignUpForm() {
                                 <label htmlFor="remember" className="text-gray-500">Remember me</label>
                             </div>
                         </div>
+
                         <button type="submit" className="w-full text-white bg-red-900 rounded-md p-2">Sign up</button>
+
                         <div>
                             <a className=" text-sm text-red-700 "> {error?.message} </a>
                         </div>
+
                         {/* divider */}
                         <div className="flex items-center justify-between w-full">
                             <div className="w-full border-b border-gray-500"></div>
@@ -132,12 +138,13 @@ export default function SignUpForm() {
                             </p>
                             <a href="#" className="text-sm font-medium text-red-900 hover:underline ">Forgot password?</a>
                         </div>
+
                     </form>
+
                 </div>
 
                 <img src="/assets/Logo/tail.svg" width={150} draggable={false} className=" mt-6 mr-[100px]" />
             </div>
-        </div>
     )
 
 }
