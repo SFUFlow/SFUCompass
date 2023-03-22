@@ -37,7 +37,7 @@ export default function SignUpForm() {
     }
 
     function isValidEmail(email: string) {
-        // Regular expression pattern for validating email addresses
+        // Regular expression pattern htmlFor validating email addresses
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         // Test the email against the pattern
@@ -54,9 +54,6 @@ export default function SignUpForm() {
 
 
     const handleSubmit = (e: React.FormEvent<SignUpForm>) => {
-        // const email = document.querySelector("#email")?.value;
-        // const password = document.querySelector("#password")?.value;
-        // const confirmPassword = document.querySelector("#confirmPassword")?.value;
         e.preventDefault();
 
         const email = e.currentTarget.elements.email.value;
@@ -89,7 +86,7 @@ export default function SignUpForm() {
                     </div>
                     <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit} noValidate>
                         <div>
-                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Your Email</label>
+                            <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900">Your Email</label>
                             <div className="relative">
                                 <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                                     <svg aria-hidden="true" className={error?.cause == "email" ? "w-5 h-5 text-red-800" : "w-5 h-5 text-gray-500 invalid:text-red-800"} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
@@ -99,11 +96,11 @@ export default function SignUpForm() {
                         </div>
 
                         <div>
-                            <label for="password" className="block mb-2 text-sm font-medium text-gray-900">Password</label>
+                            <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900">Password</label>
                             <input type="password" name="password" id="password" placeholder="••••••••" className={error?.cause == "password" ? "bg-gray-50 border border-red-700 text-red-800 rounded-lg focus:ring-red-800 focus:border-red-800 block w-full p-2.5" : "bg-gray-50 border border-gray-500 text-gray-900 rounded-lg focus:ring-red-800 focus:border-red-800 block w-full p-2.5"} required />
                         </div>
                         <div>
-                            <label for="confirmPassword" className="block mb-2 text-sm font-medium text-gray-900">Confirm password</label>
+                            <label htmlFor="confirmPassword" className="block mb-2 text-sm font-medium text-gray-900">Confirm password</label>
                             <input type="password" name="confirmPassword" id="confirmPassword" placeholder="••••••••" className={error?.cause == "password" ? "bg-gray-50 border border-red-700 text-red-800 rounded-lg focus:ring-red-800 focus:border-red-800 block w-full p-2.5" : "bg-gray-50 border border-gray-500 text-gray-900 rounded-lg focus:ring-red-800 focus:border-red-800 block w-full p-2.5"} required />
                         </div>
                         <div className="flex items-start">
@@ -111,7 +108,7 @@ export default function SignUpForm() {
                                 <input id="remember" aria-describedby="remember" type="checkbox" className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-red-800 checked:bg-red-800" />
                             </div>
                             <div className="ml-3 text-sm">
-                                <label for="remember" className="text-gray-500">Remember me</label>
+                                <label htmlFor="remember" className="text-gray-500">Remember me</label>
                             </div>
                         </div>
                         <button type="submit" className="w-full text-white bg-red-900 rounded-md p-2">Sign up</button>
