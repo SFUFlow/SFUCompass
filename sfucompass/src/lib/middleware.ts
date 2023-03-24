@@ -7,7 +7,7 @@ const auth = nextConnect()
   .use(
     session({
       name: 'session',
-      secret: process.env.local.AUTH0_SECRET,
+      secret: process.env["AUTH0_SECRET"],
       cookie: {
         maxAge: 60 * 60 * 8, // 8 hours,
         httpOnly: true,

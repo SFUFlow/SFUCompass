@@ -1,7 +1,7 @@
 import { parse, serialize } from 'cookie'
 import Iron from '@hapi/iron'
 
-async function createLoginSession(session, secret) {
+async function createLoginSession(session: any, secret: any) {
   const createdAt = Date.now()
   const obj = { ...session, createdAt }
   const token = await Iron.seal(obj, secret, Iron.defaults)
@@ -9,7 +9,7 @@ async function createLoginSession(session, secret) {
   return token
 }
 
-async function getLoginSession(token, secret) {
+async function getLoginSession(token: any, secret: any) {
   const session = await Iron.unseal(token, secret, Iron.defaults)
   const expiresAt = session.createdAt + session.maxAge * 1000
 
@@ -21,7 +21,7 @@ async function getLoginSession(token, secret) {
   return session
 }
 
-function parseCookies(req) {
+function parseCookies(req: any) {
   // For API Routes we don't need to parse the cookies.
   if (req.cookies) return req.cookies
 
@@ -30,8 +30,8 @@ function parseCookies(req) {
   return parse(cookie || '')
 }
 
-export default function session({ name, secret, cookie: cookieOpts }) {
-  return async (req, res, next) => {
+export default function session({ name, secret, cookie: cookieOpts }: { name: string, secret: any, cookie: any }) {
+  return async (req: any, res: any, next: any) => {
     const cookies = parseCookies(req)
     const token = cookies[name]
     let unsealed = {}
@@ -49,7 +49,7 @@ export default function session({ name, secret, cookie: cookieOpts }) {
 
     // We are proxying res.end to commit the session cookie
     const oldEnd = res.end
-    res.end = async function resEndProxy(...args) {
+    res.end = async function resEndProxy(...args: any[]) {
       if (res.finished || res.writableEnded || res.headersSent) return
       if (cookieOpts.maxAge) {
         req.session.maxAge = cookieOpts.maxAge

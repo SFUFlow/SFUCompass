@@ -11,15 +11,20 @@
     "studiodb:dev": "dotenv -e .env.local npx prisma studio"
   },
   "dependencies": {
-    "@auth0/nextjs-auth0": "^2.2.2",
+    "@auth0/nextjs-auth0": "^2.2.3",
+    "@hapi/iron": "^7.0.1",
+    "@types/cookie": "^0.5.1",
     "@prisma/client": "^4.11.0",
     "@types/node": "18.14.4",
+    "@types/passport": "^1.0.12",
+    "@types/passport-local": "^1.0.35",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
     "dotenv-cli": "^7.1.0",
     "eslint": "8.35.0",
     "eslint-config-next": "13.2.3",
-    "next": "^13.2.3",
+    "next": "^13.2.4",
+    "next-connect": "^0.13.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
